@@ -23,10 +23,9 @@ public class SendFileThread extends Thread{
 			
 			File	filePath		= 	new File(file);
 			String 	fileName		=	filePath.getName();
-			output.writeUTF(fileName + " from " + sender + " to " + receiver );
-			
+			output.writeUTF(fileName + " from " + sender + " to " + receiver );			
 			FileInputStream	input	=	new FileInputStream(fileName);
-			output						= 	new DataOutputStream(socket.getOutputStream());
+			output					= 	new DataOutputStream(socket.getOutputStream());
 			BufferedInputStream bis	=	new BufferedInputStream(input);
 			int 	count;
 			byte[]	buffer			=	new byte[8000];
@@ -48,7 +47,6 @@ public class SendFileThread extends Thread{
 			
 		} catch (IOException e) {
 			System.out.println("[sendfile] "+e.getMessage());
-			e.printStackTrace();
 		}
 		
 	}

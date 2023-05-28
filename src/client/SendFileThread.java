@@ -46,7 +46,7 @@ public class SendFileThread extends Thread{
 			System.out.println("File has been sent");
 			
 		} catch (IOException e) {
-			System.out.println("[sendfile] "+e.getMessage());
+			System.out.println(e.getMessage());
 		}
 		
 	}
